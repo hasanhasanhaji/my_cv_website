@@ -3,6 +3,7 @@ from django.urls import path
 from django.conf.urls.static import static
 from django.conf import settings
 
+app_name = 'cvweb'
 urlpatterns = [
     # path('url',view)
     path('', index_view, name='index'),
