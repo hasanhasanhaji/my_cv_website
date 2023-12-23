@@ -2,8 +2,15 @@ from django.shortcuts import render
 
 # Create your views here.
 
+
 def index_view(request):
-    return render(request, 'website/index.html')
+    context = {'name': 'حسن حاجی محمدی',
+               'prompt': 'سلام، بنده',
+               'dis': 'برنامه نویس، کارآفرین و مدرس دانشگاه هستم.',
+               'education': 'دکترای کامپیوتر گرایش هوش مصنوعی'
+               }
+
+    return render(request, 'website/index.html', context)
 
 
 def about_view(request):
