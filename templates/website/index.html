@@ -2,457 +2,434 @@
 {% load static %}
 
 {% block content %}
-        <!--================Home Banner Area =================-->
-        <section class="home_banner_area">
-           	<div class="container box_1620">
-           		<div class="banner_inner d-flex align-items-center">
-					<div class="banner_content">
-						<div class="media" >
-							<div class="d-flex" style="padding-right: 0px!important;" >
-								<img src="{% static 'img/personal.jpg' %} " alt="" >
-							</div>
-							<div class="media-body" >
-								<div class="personal_text txt_al_ps" >
-									<h5>{{prompt}}  </h5>
-									<h3> {{name}} </h3>
-									<h4>{{dis}}</h4>
-									<p>{{education}}</p>
-									<ul class="list basic_info" style="text-align: right;" >
-										<li> <a href="#"><i class="lnr lnr-calendar-full"  ></i><span class="spn_ic">10 تیر 1370</span></a></li>
-										<li><a href="#"><i class="lnr lnr-phone-handset"></i><span class="spn_ic"> 09111717547</span></a></li>
-										<li><a href="#"><i class="lnr lnr-envelope"></i> <span class="spn_ic">hasanhasanhaji@gmail.com</span></a></li>
-										<li><a href="#"><i class="lnr lnr-home"></i><span class="spn_ic">گرگان </span></a></li>
-									</ul>
-									<ul class="list personal_social">
-										<li><a href="#"><i class="fa fa-facebook"></i></a></li>
-										<li><a href="#"><i class="fa fa-twitter"></i></a></li>
-										<li><a href="#"><i class="fa fa-linkedin"></i></a></li>
-									</ul>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
+
+<!--================Home Banner Area =================-->
+<section class="home_banner_area">
+    <div class="container box_1620">
+        <div class="banner_inner d-flex align-items-center">
+            <div class="banner_content">
+                <div class="media">
+                    <div class="d-flex" style="padding-right: 0px!important;">
+                        <img src="{% static 'img/personal.jpg' %} " alt="">
+                    </div>
+                    <div class="media-body">
+                        <div class="personal_text txt_al_ps">
+                            <h5>{{prompt}} </h5>
+                            <h3> {{name}} </h3>
+                            <h4>{{dis}}</h4>
+                            <p>{{education}}</p>
+                            <ul class="list basic_info" style="text-align: right;">
+                                <li><a href="#"><i class="lnr lnr-calendar-full"></i><span
+                                        class="spn_ic"> تیر ۱۳۷۰</span></a></li>
+                                <li><a href="#"><i class="lnr lnr-phone-handset"></i><span
+                                        class="spn_ic"> ۰۹۱۱۷۱۷۱۷۵۴۷</span></a></li>
+                                <li><a href="#"><i class="lnr lnr-envelope"></i> <span class="spn_ic">hasanhasanhaji@gmail.com</span></a>
+                                </li>
+                                <li><a href="#"><i class="lnr lnr-home"></i><span class="spn_ic">گرگان </span></a></li>
+                            </ul>
+                            <!--									<ul class="list personal_social">-->
+                            <!--										<li><a href="#"><i class="fa fa-facebook"></i></a></li>-->
+                            <!--										<li><a href="#"><i class="fa fa-twitter"></i></a></li>-->
+                            <!--										<li><a href="#"><i class="fa fa-linkedin"></i></a></li>-->
+                            <!--									</ul>-->
+                        </div>
+                    </div>
+                </div>
             </div>
-        </section>
-        <!--================End Home Banner Area =================-->
+        </div>
+    </div>
+</section>
+<!--================End Home Banner Area =================-->
 
-        <!--================Welcome Area =================-->
-        <section class="welcome_area p_120"  >
-        	<div class="container">
-        		<div class="row welcome_inner">
-        			<div class="col-lg-6">
-        				<div class="welcome_text" >
-        					<h4>درباره من</h4>
-        					<p>سال هاست در زمینه برنامه نویسی پایتون و هوش مصنوعی مشغول فعالیت بوده و در چندین دانشگاه به عنوان مشاور توسعه سیستم های هوشمند مشغول فعالیت هستم. علاقه مندی اصلی بنده یادگیری ماشین و یادگیری عمیق و همچنین سیستم های پردازش متنی است.</p>
-        					<div class="row">
-        						<div class="col-md-4">
-        							<div class="wel_item">
-        								<i class="lnr lnr-database"></i>
-        								<h4>7</h4>
-        								<p>تعداد مقالات</p>
-        							</div>
-        						</div>
-        						<div class="col-md-4">
-        							<div class="wel_item">
-        								<i class="lnr lnr-book"></i>
-        								<h4>23</h4>
-        								<p>تعداد پروژه ها</p>
-        							</div>
-        						</div>
-<!--        						<div class="col-md-4">-->
-<!--        							<div class="wel_item">-->
-<!--        								<i class="lnr lnr-smile"></i>-->
-<!--        								<h4>۲۴۳۵</h4>-->
-<!--        								<p>تعداد منتخبین</p>-->
-<!--        							</div>-->
-<!--        						</div>-->
-        					</div>
-        				</div>
-        			</div>
-        			<div class="col-lg-6">
-        				<div class="tools_expert">
-        					<div class="skill_main">
-								<div class="skill_item">
-									<h4>زبان برنامه نویسی پایتون <span class="counter">90</span>%</h4>
-									<div class="progress_br">
-										<div class="progress">
-											<div class="progress-bar" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
-										</div>
-									</div>
-								</div>
-								<div class="skill_item">
-									<h4>یادگیری ماشینی و یادگیری عمیق <span class="counter">80</span>%</h4>
-									<div class="progress_br">
-										<div class="progress">
-											<div class="progress-bar" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
-										</div>
-									</div>
-								</div>
-								<div class="skill_item">
-									<h4>پردازش زبان های طبیعی<span class="counter">95</span>%</h4>
-									<div class="progress_br">
-										<div class="progress">
-											<div class="progress-bar" role="progressbar" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100"></div>
-										</div>
-									</div>
-								</div>
-								<div class="skill_item">
-									<h4>هوشمند سازی صنعتی <span class="counter">65</span>%</h4>
-									<div class="progress_br">
-										<div class="progress">
-											<div class="progress-bar" role="progressbar" aria-valuenow="65" aria-valuemin="0" aria-valuemax="100"></div>
-										</div>
-									</div>
-								</div>
-								<div class="skill_item">
-									<h4>برنامه نویسی وب <span class="counter">75</span>%</h4>
-									<div class="progress_br">
-										<div class="progress">
-											<div class="progress-bar" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
-										</div>
-									</div>
-								</div>
-							</div>
-        				</div>
-        			</div>
-        		</div>
-        	</div>
-        </section>
-        <!--================End Welcome Area =================-->
+<!--================Welcome Area =================-->
+<section class="welcome_area p_120">
+    <div class="container">
+        <div class="row welcome_inner">
+            <div class="col-lg-6">
+                <div class="welcome_text">
+                    <h4>درباره من</h4>
+                    <p>سال هاست در زمینه برنامه نویسی پایتون و هوش مصنوعی مشغول فعالیت بوده و در چندین دانشگاه به عنوان
+                        مشاور توسعه سیستم های هوشمند مشغول فعالیت هستم. علاقه مندی اصلی بنده یادگیری ماشین و یادگیری
+                        عمیق و همچنین سیستم های پردازش متنی است.</p>
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="wel_item">
+                                <i class="lnr lnr-database"></i>
+                                <h4>7</h4>
+                                <p>تعداد مقالات</p>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="wel_item">
+                                <i class="lnr lnr-book"></i>
+                                <h4>23</h4>
+                                <p>تعداد پروژه ها</p>
+                            </div>
+                        </div>
+                        <!--        						<div class="col-md-4">-->
+                        <!--        							<div class="wel_item">-->
+                        <!--        								<i class="lnr lnr-smile"></i>-->
+                        <!--        								<h4>۲۴۳۵</h4>-->
+                        <!--        								<p>تعداد منتخبین</p>-->
+                        <!--        							</div>-->
+                        <!--        						</div>-->
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="tools_expert">
+                    <div class="skill_main">
+                        <div class="skill_item">
+                            <h4>زبان برنامه نویسی پایتون <span class="counter">90</span>%</h4>
+                            <div class="progress_br">
+                                <div class="progress">
+                                    <div class="progress-bar" role="progressbar" aria-valuenow="90" aria-valuemin="0"
+                                         aria-valuemax="100"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="skill_item">
+                            <h4>یادگیری ماشینی و یادگیری عمیق <span class="counter">95</span>%</h4>
+                            <div class="progress_br">
+                                <div class="progress">
+                                    <div class="progress-bar" role="progressbar" aria-valuenow="95" aria-valuemin="0"
+                                         aria-valuemax="100"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="skill_item">
+                            <h4>پردازش زبان های طبیعی<span class="counter">95</span>%</h4>
+                            <div class="progress_br">
+                                <div class="progress">
+                                    <div class="progress-bar" role="progressbar" aria-valuenow="95" aria-valuemin="0"
+                                         aria-valuemax="100"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="skill_item">
+                            <h4>هوشمند سازی صنعتی <span class="counter">65</span>%</h4>
+                            <div class="progress_br">
+                                <div class="progress">
+                                    <div class="progress-bar" role="progressbar" aria-valuenow="65" aria-valuemin="0"
+                                         aria-valuemax="100"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="skill_item">
+                            <h4>برنامه نویسی وب <span class="counter">75</span>%</h4>
+                            <div class="progress_br">
+                                <div class="progress">
+                                    <div class="progress-bar" role="progressbar" aria-valuenow="75" aria-valuemin="0"
+                                         aria-valuemax="100"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!--================End Welcome Area =================-->
 
-        <!--================My Tabs Area =================-->
-        <section class="mytabs_area p_120">
-        	<div class="container">
-        		<div class="tabs_inner">
-					<ul class="nav nav-tabs" id="myTab" role="tablist">
-						<li class="nav-item">
-							<a class="nav-link " id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">سوابق شغلی</a>
-						</li>
-						<li class="nav-item">
-							<a class="nav-link " id="language-tab" data-toggle="tab" href="#language" role="tab" aria-controls="language" aria-selected="false">زبان ها</a>
-						</li>
-						<li class="nav-item">
-							<a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">تحصیلات من</a>
-						</li>
+<!--================My Tabs Area =================-->
+<section class="mytabs_area p_120">
+    <div class="container">
+        <div class="tabs_inner">
+            <ul class="nav nav-tabs" id="myTab" role="tablist">
+                <li class="nav-item">
+                    <a class="nav-link " id="profile-tab" data-toggle="tab" href="#profile" role="tab"
+                       aria-controls="profile" aria-selected="false">سوابق شغلی</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab"
+                       aria-controls="home" aria-selected="true">تحصیلات من</a>
+                </li>
 
-					</ul>
-					<div class="tab-content" id="myTabContent">
-						<div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
-							<ul class="list" >
-								<li>
-									<span></span>
-									<div class="media">
-										<div class="d-flex tabs-s">
-											<p> 1401</p>
-										</div>
-										<div class="media-body">
-											<h4>دکترا کامپیوتر</h4>
-											<p>هوش مصنوعی<br />دانشگاه شهید بهشتی، تهران</p>
-										</div>
-									</div>
-								</li>
-								<li>
-									<span></span>
-									<div class="media">
-										<div class="d-flex tabs-s">
-											<p>دی 1394</p>
-										</div>
-										<div class="media-body">
-											<h4>ارشد کامپیوتر</h4>
-											<p>سخت افزار <br />دانشگاه شهید بهشتی تهران</p>
-										</div>
-									</div>
-								</li>
-								<li>
-								<span></span>
-									<div class="media">
-										<div class="d-flex tabs-s">
-											<p>شهریور 1392</p>
-										</div>
-										<div class="media-body">
-											<h4>لیسانس کامپیوتر</h4>
-											<p>سخت افزار <br />دانشگاه صنعتی بابل</p>
-										</div>
-									</div>
-								</li>
-							</ul>
-						</div>
-						<div class="tab-pane fade show  " id="language" role="tabpanel" aria-labelledby="language-tab">
-							<ul class="list" >
-								<li>
-									<span></span>
-									<div class="media">
-										<div class="d-flex tabs-s">
-											<p> 1</p>
-										</div>
-										<div class="media-body">
-											<h4>زبان انگلیسی</h4>
-											<p> <br /></p>
-										</div>
-									</div>
-								</li>
-								<li>
-									<span></span>
-									<div class="media">
-										<div class="d-flex tabs-s">
-											<p> 2</p>
-										</div>
-										<div class="media-body">
-											<h4>زبان عربی</h4>
-											<p ><br /></p>
-										</div>
-									</div>
-								</li>
-								<li>
-								<span></span>
-									<div class="media">
-										<div class="d-flex tabs-s">
-											<p>3
-												 </p>
-										</div>
-										<div class="media-body">
-											<h4>زبان فرانسه</h4>
-											<p> <br /></p>
-										</div>
-									</div>
-								</li>
-							</ul>
-						</div>
-						>
-							<ul class="list" >
-								<li>
-									<span></span>
-									<div class="media">
-										<div class="d-flex tabs-s">
-											<p> 1402</p>
-										</div>
-										<div class="media-body">
-											<h4>استاد دانشگاه</h4>
-											<p>دانشگاه آزاد گرگان <br /></p>
-										</div>
-									</div>
-								</li>
-								<li>
-									<span></span>
-									<div class="media">
-										<div class="d-flex tabs-s">
-											<p> 1401</p>
-										</div>
-										<div class="media-body">
-											<h4>مدیر آموزشگاه</h4>
-											<p >انگیزه سازان پارسه<br /></p>
-										</div>
-									</div>
-								</li>
-								<li>
-								<span></span>
-									<div class="media">
-										<div class="d-flex tabs-s">
-											<p>1398
-												 </p>
-										</div>
-										<div class="media-body">
-											<h4>مدیرعامل</h4>
-											<p>شرکت انگیزه سازان پارسه <br /></p>
-										</div>
-									</div>
-								</li>
-							</ul>
-						</div>
-					</div>
+            </ul>
+            <div class="tab-content" id="myTabContent">
+                <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+                    <ul class="list">
+                        <li>
+                            <span></span>
+                            <div class="media">
+                                <div class="d-flex tabs-s">
+                                    <p> 1401</p>
+                                </div>
+                                <div class="media-body">
+                                    <h4>دکترا کامپیوتر</h4>
+                                    <p>هوش مصنوعی<br/>دانشگاه شهید بهشتی، تهران</p>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <span></span>
+                            <div class="media">
+                                <div class="d-flex tabs-s">
+                                    <p>دی 1394</p>
+                                </div>
+                                <div class="media-body">
+                                    <h4>ارشد کامپیوتر</h4>
+                                    <p>سخت افزار <br/>دانشگاه شهید بهشتی تهران</p>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <span></span>
+                            <div class="media">
+                                <div class="d-flex tabs-s">
+                                    <p>شهریور 1392</p>
+                                </div>
+                                <div class="media-body">
+                                    <h4>لیسانس کامپیوتر</h4>
+                                    <p>سخت افزار <br/>دانشگاه صنعتی بابل</p>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="tab-pane fade show  " id="profile" role="tabpanel" aria-labelledby="language-tab">
+                    <ul class="list">
+                        <li>
+                            <span></span>
+                            <div class="media">
+                                <div class="d-flex tabs-s">
+                                    <p> 1402</p>
+                                </div>
+                                <div class="media-body">
+                                    <h4>مدرس دانشگاه</h4>
+                                    <p>دانشگاه آزاد اسلامی گرگان<br/></p>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <span></span>
+                            <div class="media">
+                                <div class="d-flex tabs-s">
+                                    <p> 1401</p>
+                                </div>
+                                <div class="media-body">
+                                    <h4>مدیر موسس</h4>
+                                    <p>آموزشگاه فنی حرفه ای انگیزه سازان پارسه<br/></p>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <span></span>
+                            <div class="media">
+                                <div class="d-flex tabs-s">
+                                    <p>1398
+                                    </p>
+                                </div>
+                                <div class="media-body">
+                                    <h4>مدیرعامل</h4>
+                                    <p>شرکت انگیزه سازان پارسه<br/></p>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
 
 
-        		</div>
-        	</div>
-        </section>
-        <!--================End My Tabs Area =================-->
+    </div>
+    </div>
+</section>
+<!--================End My Tabs Area =================-->
 
-        <!--================Feature Area =================-->
-        <section class="feature_area p_120">
-        	<div class="container">
-        		<div class="main_title">
-        			<h2>پیشنهاد برای کاربران</h2>
-        			<p>اگر شما به دنبال بهترین طرح ها برای وب سایت خود هستید این سایت برای شما ساخته شده تا بتوانید ایده های خود را به اشتراک بگذارید و از ایده دیگر اعضا به راحتی کمک بگیرید</p>
-        		</div>
-        		<div class="feature_inner row">
-        			<div class="col-lg-4 col-md-6">
-        				<div class="feature_item">
-        					<i class="flaticon-city"></i>
-        					<h4>معمار وب</h4>
-        					<p>شما به راحتی میتوانید با کمک ما یک معمار وب عالی شوید و دوستان خود را از پروژه های خود با خبر بگذارید و از دوستان خود برای پیشرفت کمک بگیرید و وارد دنیای جدید شوید</p>
-        				</div>
-        			</div>
-        			<div class="col-lg-4 col-md-6">
-        				<div class="feature_item">
-        					<i class="flaticon-skyline"></i>
-        					<h4>طراح داخلی</h4>
-        					<p>اگر یک طراح داخلی ماهر هستید بهترین راه آشنا شدن با معماران بزرگ و پروژه های قوی هستید در این سایت شما میتوانید با بهترین ها در رشته خود آشنا شوید</p>
-        				</div>
-        			</div>
-        			<div class="col-lg-4 col-md-6">
-        				<div class="feature_item">
-        					<i class="flaticon-sketch"></i>
-        					<h4>طراحی ترکیبی</h4>
-        					<p>یک طراح واقعی ایده ها را بررسی کرده از آن ها استفاده کرده بهره گرفته و در همه حال در حا ساخت یک طراحی جدید و به روز است و اینجا ما شما را با انگیزه تر میکنیم</p>
-        				</div>
-        			</div>
-        		</div>
-        	</div>
-        </section>
-        <!--================End Feature Area =================-->
+<!--================Feature Area =================-->
+<!--<section class="feature_area p_120">-->
+<!--    <div class="container">-->
+<!--        <div class="main_title">-->
+<!--            <h2>راهکارهای نوین</h2>-->
+<!--        </div>-->
+<!--        <div class="feature_inner row">-->
+<!--            <div class="col-lg-4 col-md-6">-->
+<!--                <div class="feature_item">-->
+<!--                    <i class="flaticon-city"></i>-->
+<!--                    <h4>هوش مصنوعی</h4>-->
+<!--                    <p>طراحی و ارایه مشاوره در جهت تولید سیستم های مبتنی بر هوش مصنوعی</p>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--            <div class="col-lg-4 col-md-6">-->
+<!--                <div class="feature_item">-->
+<!--                    <i class="flaticon-skyline"></i>-->
+<!--                    <h4>طراح داخلی</h4>-->
+<!--                    <p>اگر یک طراح داخلی ماهر هستید بهترین راه آشنا شدن با معماران بزرگ و پروژه های قوی هستید در این-->
+<!--                        سایت شما میتوانید با بهترین ها در رشته خود آشنا شوید</p>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--            <div class="col-lg-4 col-md-6">-->
+<!--                <div class="feature_item">-->
+<!--                    <i class="flaticon-sketch"></i>-->
+<!--                    <h4>طراحی ترکیبی</h4>-->
+<!--                    <p>یک طراح واقعی ایده ها را بررسی کرده از آن ها استفاده کرده بهره گرفته و در همه حال در حا ساخت یک-->
+<!--                        طراحی جدید و به روز است و اینجا ما شما را با انگیزه تر میکنیم</p>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--    </div>-->
+<!--</section>-->
+<!--================End Feature Area =================-->
 
-        <!--================Home Gallery Area =================-->
-        <section class="home_gallery_area p_120">
-        	<div class="container">
-        		<div class="main_title">
-        			<h2>آخرین پروژه های من</h2>
-        			<p>در این بخش برخی از پروژه های توسعه داده شده توسط من را ملاحظه میکنید.</p>
-        		</div>
-        		<div class="isotope_fillter">
-        			<ul class="gallery_filter list">
-						<li class="active" data-filter="*"><a href="#">همه</a></li>
-						<li data-filter=".brand"><a href="#">پیش زمینه</a></li>
-						<li data-filter=".manipul"><a href="#">پوستر</a></li>
-						<li data-filter=".creative"><a href="#">رابط گرافیکی</a></li>
-						<li data-filter=".design"><a href="#">برای چاپ</a></li>
-					</ul>
-        		</div>
-        	</div>
-        	<div class="container">
-        		<div class="gallery_f_inner row imageGallery1">
-        			<div class="col-lg-4 col-md-4 col-sm-6 brand manipul design print">
-        				<div class="h_gallery_item">
-        					<div class="g_img_item">
-        						<img class="img-fluid" src="{% static 'img/gallery/project-1.jpg' %}" alt="">
-        						<a class="light" href="{% static 'img/gallery/project-1.jpg' %}"><img src="{% static 'img/gallery/icon.png' %}" alt=""></a>
-        					</div>
-        					<div class="g_item_text">
-        						<h4>طراحی پوستر سه بعدی</h4>
-        						<p>پروژه کاربری</p>
-        					</div>
-        				</div>
-        			</div>
-        			<div class="col-lg-4 col-md-4 col-sm-6 brand manipul creative">
-        				<div class="h_gallery_item">
-        					<div class="g_img_item">
-        						<img class="img-fluid" src="{% static 'img/gallery/project-2.jpg' %}" alt="">
-        						<a class="light" href="{% static 'img/gallery/project-2.jpg' %}"><img src="{% static 'img/gallery/icon.png' %}" alt=""></a>
-        					</div>
-        					<div class="g_item_text">
-        						<h4>طراحی گرافیکی دو بعدی</h4>
-        						<p>پروژه کاربر</p>
-        					</div>
-        				</div>
-        			</div>
-        			<div class="col-lg-4 col-md-4 col-sm-6 manipul creative design print">
-        				<div class="h_gallery_item">
-        					<div class="g_img_item">
-        						<img class="img-fluid" src="{% static 'img/gallery/project-3.jpg' %}" alt="">
-        						<a class="light" href="{% static 'img/gallery/project-3.jpg' %}"><img src="{% static 'img/gallery/icon.png' %}" alt=""></a>
-        					</div>
-        					<div class="g_item_text">
-        						<h4>طراحی پوستر خلاقانه</h4>
-        						<p>پروژه کاربر</p>
-        					</div>
-        				</div>
-        			</div>
-        			<div class="col-lg-4 col-md-4 col-sm-6 brand creative print">
-        				<div class="h_gallery_item">
-        					<div class="g_img_item">
-        						<img class="img-fluid" src="{% static 'img/gallery/project-4.jpg' %}" alt="">
-        						<a class="light" href="{% static 'img/gallery/project-4.jpg' %}"><img src="{% static 'img/gallery/icon.png' %}" alt=""></a>
-        					</div>
-        					<div class="g_item_text">
-        						<h4>طراحی گرافیکی </h4>
-        						<p>پروژه کاربر</p>
-        					</div>
-        				</div>
-        			</div>
-        			<div class="col-lg-4 col-md-4 col-sm-6 brand manipul design">
-        				<div class="h_gallery_item">
-        					<div class="g_img_item">
-        						<img class="img-fluid" src="{% static 'img/gallery/project-5.jpg' %}" alt="">
-        						<a class="light" href="{% static 'img/gallery/project-5.jpg' %}"><img src="{% static 'img/gallery/icon.png' %}" alt=""></a>
-        					</div>
-        					<div class="g_item_text">
-        						<h4>طراحی قالب سه بعدی</h4>
-        						<p>پروژه کاربر</p>
-        					</div>
-        				</div>
-        			</div>
-        			<div class="col-lg-4 col-md-4 col-sm-6 brand creative">
-        				<div class="h_gallery_item">
-        					<div class="g_img_item">
-        						<img class="img-fluid" src="{% static 'img/gallery/project-6.jpg' %}" alt="">
-        						<a class="light" href="{% static 'img/gallery/project-6.jpg' %}"><img src="{% static 'img/gallery/icon.png' %}" alt=""></a>
-        					</div>
-        					<div class="g_item_text">
-        						<h4>طراحی لوگو سه بعدی</h4>
-        						<p>پروژه کاربر</p>
-        					</div>
-        				</div>
-        			</div>
-        		</div>
-        		<div class="more_btn">
-        			<a class="main_btn" href="#">پروژه های بیشتر</a>
-        		</div>
-        	</div>
-        </section>
-        <!--================End Home Gallery Area =================-->
+<!--================Home Gallery Area =================-->
+<section class="home_gallery_area p_120">
+    <div class="container">
+        <div class="main_title">
+            <h2>دوره های آموزشی</h2>
+            <p>در این بخش برخی از دوره های تدریس شده مدرس آورده شده است.</p>
+        </div>
+        <div class="isotope_fillter">
+            <ul class="gallery_filter list">
+                <li class="active" data-filter="*"><a href="#">همه</a></li>
+<!--                <li data-filter=".brand"><a href="#">پیش زمینه</a></li>-->
+<!--                <li data-filter=".manipul"><a href="#">پوستر</a></li>-->
+<!--                <li data-filter=".creative"><a href="#">رابط گرافیکی</a></li>-->
+<!--                <li data-filter=".design"><a href="#">برای چاپ</a></li>-->
+            </ul>
+        </div>
+    </div>
+    <div class="container">
+        <div class="gallery_f_inner row imageGallery1">
+            <div class="col-lg-4 col-md-4 col-sm-6 brand manipul design print">
+                <div class="h_gallery_item">
+                    <div class="g_img_item">
+                        <img class="img-fluid" src="{% static 'img/gallery/project-1.jpg' %}" alt="">
+                        <a class="light" href="{% static 'img/gallery/project-1.jpg' %}"><img
+                                src="{% static 'img/gallery/icon.png' %}" alt=""></a>
+                    </div>
+                    <div class="g_item_text">
+                        <h4>برنامه نویسی پایتون</h4>
+                        <p></p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-4 col-sm-6 brand manipul creative">
+                <div class="h_gallery_item">
+                    <div class="g_img_item">
+                        <img class="img-fluid" src="{% static 'img/gallery/project-2.png' %}" alt="">
+                        <a class="light" href="{% static 'img/gallery/project-2.png' %}"><img
+                                src="{% static 'img/gallery/icon.png' %}" alt=""></a>
+                    </div>
+                    <div class="g_item_text">
+                        <h4>یادگیری ماشینی</h4>
+<!--                        <p>پروژه کاربر</p>-->
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-4 col-sm-6 manipul creative design print">
+                <div class="h_gallery_item">
+                    <div class="g_img_item">
+                        <img class="img-fluid" src="{% static 'img/gallery/project-3.png' %}" alt="">
+                        <a class="light" href="{% static 'img/gallery/project-3.png' %}"><img
+                                src="{% static 'img/gallery/icon.png' %}" alt=""></a>
+                    </div>
+                    <div class="g_item_text">
+                        <h4>یادگیری عمیق</h4>
+<!--                        <p>پروژه کاربر</p>-->
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-4 col-sm-6 brand creative print">
+                <div class="h_gallery_item">
+                    <div class="g_img_item">
+                        <img class="img-fluid" src="{% static 'img/gallery/project-4.jpg' %}" alt="">
+                        <a class="light" href="{% static 'img/gallery/project-4.jpg' %}"><img
+                                src="{% static 'img/gallery/icon.png' %}" alt=""></a>
+                    </div>
+                    <div class="g_item_text">
+                        <h4>طراحی اپلیکیشن دسکتاپ </h4>
+<!--                        <p>پروژه کاربر</p>-->
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-4 col-sm-6 brand manipul design">
+                <div class="h_gallery_item">
+                    <div class="g_img_item">
+                        <img class="img-fluid" src="{% static 'img/gallery/project-5.jpg' %}" alt="">
+                        <a class="light" href="{% static 'img/gallery/project-5.jpg' %}"><img
+                                src="{% static 'img/gallery/icon.png' %}" alt=""></a>
+                    </div>
+                    <div class="g_item_text">
+                        <h4>ICDL</h4>
+<!--                        <p>پروژه کاربر</p>-->
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-4 col-sm-6 brand creative">
+                <div class="h_gallery_item">
+                    <div class="g_img_item">
+                        <img class="img-fluid" src="{% static 'img/gallery/project-6.png' %}" alt="">
+                        <a class="light" href="{% static 'img/gallery/project-6.png' %}"><img
+                                src="{% static 'img/gallery/icon.png' %}" alt=""></a>
+                    </div>
+                    <div class="g_item_text">
+                        <h4>برنامه نویسی بک اند</h4>
+<!--                        <p>پروژه کاربر</p>-->
+                    </div>
+                </div>
+            </div>
+        </div>
+<!--        <div class="more_btn">-->
+<!--            <a class="main_btn" href="#">پروژه های بیشتر</a>-->
+<!--        </div>-->
+    </div>
+</section>
+<!--================End Home Gallery Area =================-->
 
-        <!--================Testimonials Area =================-->
-        <section class="testimonials_area p_120">
-        	<div class="container">
-        		<div class="main_title">
-        			<h2>رضایت کاربران</h2>
-        			<p>شما میتوانید در این قسمت ایده ها و نظرات کسانی را که با سایت ما آشنا شده اند را بخوانید و شما نیز نظرات خود را درباره ی موفقیت های خود بگذارید</p>
-        		</div>
-        		<div class="testi_inner">
-					<div class="testi_slider owl-carousel">
-						<div class="item">
-							<div class="testi_item" dir="rtl">
-								<p>با وجود شما من تونستم بر روی محتوا گذاشتن روی وبسایتم به خوبی متمرکز بشم و خیالم از مسائل فنی راحت شده. خیلی خوشحالم که بخش فنی سایتم رو به دست فردی با تجربه و قابل اعتماد سپردم.</p>
-								<h4>امیر زارعیان</h4>
-								<a href="#"><i class="fa fa-star"></i></a>
-								<a href="#"><i class="fa fa-star"></i></a>
-								<a href="#"><i class="fa fa-star"></i></a>
-								<a href="#"><i class="fa fa-star"></i></a>
-								<a href="#"><i class="fa fa-star-half-o flip_H" ></i></a>
-							</div>
-						</div>
-						<div class="item">
-							<div class="testi_item" dir="rtl">
-								<p>این سایت و خدماتش واقعا عالی هستن و حس خیلی خوبیه وقتی ببینی هرمشکلی که سایتت داشته باشه مهم نیست چون شخصی هست که میتونه براحتی بهتون راه حل بده.</p>
-								<h4>علیرضا حسینی</h4>
-								<a href="#"><i class="fa fa-star"></i></a>
-								<a href="#"><i class="fa fa-star"></i></a>
-								<a href="#"><i class="fa fa-star"></i></a>
-								<a href="#"><i class="fa fa-star"></i></a>
-								<a href="#"><i class="fa fa-star-half-o flip_H"></i></a>
-							</div>
-						</div>
-						<div class="item">
-							<div class="testi_item" dir="rtl">
-								<p>از این بابت خیلی خوشحالم که میتونم برای هر مشکلی که داشتم بلافاصله از شما کمک بگیرم و شما بلافاصله در هر ساعت از شبانه روز که باشه آنلاین پاسخگو هستید.</p>
-								<h4>مصطفی سلیمی </h4>
-								<a href="#"><i class="fa fa-star"></i></a>
-								<a href="#"><i class="fa fa-star"></i></a>
-								<a href="#"><i class="fa fa-star"></i></a>
-								<a href="#"><i class="fa fa-star"></i></a>
-								<a href="#"><i class="fa fa-star-half-o flip_H"></i></a>
-							</div>
-						</div>
-					</div>
-        		</div>
-        	</div>
-        </section>
-        <!--================End Testimonials Area =================-->
-
-
-
-
-
+<!--================Testimonials Area =================-->
+<!--<section class="testimonials_area p_120">-->
+<!--    <div class="container">-->
+<!--        <div class="main_title">-->
+<!--            <h2>رضایت کاربران</h2>-->
+<!--            <p>شما میتوانید در این قسمت ایده ها و نظرات کسانی را که با سایت ما آشنا شده اند را بخوانید و شما نیز نظرات-->
+<!--                خود را درباره ی موفقیت های خود بگذارید</p>-->
+<!--        </div>-->
+<!--        <div class="testi_inner">-->
+<!--            <div class="testi_slider owl-carousel">-->
+<!--                <div class="item">-->
+<!--                    <div class="testi_item" dir="rtl">-->
+<!--                        <p>با وجود شما من تونستم بر روی محتوا گذاشتن روی وبسایتم به خوبی متمرکز بشم و خیالم از مسائل فنی-->
+<!--                            راحت شده. خیلی خوشحالم که بخش فنی سایتم رو به دست فردی با تجربه و قابل اعتماد سپردم.</p>-->
+<!--                        <h4>امیر زارعیان</h4>-->
+<!--                        <a href="#"><i class="fa fa-star"></i></a>-->
+<!--                        <a href="#"><i class="fa fa-star"></i></a>-->
+<!--                        <a href="#"><i class="fa fa-star"></i></a>-->
+<!--                        <a href="#"><i class="fa fa-star"></i></a>-->
+<!--                        <a href="#"><i class="fa fa-star-half-o flip_H"></i></a>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--                <div class="item">-->
+<!--                    <div class="testi_item" dir="rtl">-->
+<!--                        <p>این سایت و خدماتش واقعا عالی هستن و حس خیلی خوبیه وقتی ببینی هرمشکلی که سایتت داشته باشه مهم-->
+<!--                            نیست چون شخصی هست که میتونه براحتی بهتون راه حل بده.</p>-->
+<!--                        <h4>علیرضا حسینی</h4>-->
+<!--                        <a href="#"><i class="fa fa-star"></i></a>-->
+<!--                        <a href="#"><i class="fa fa-star"></i></a>-->
+<!--                        <a href="#"><i class="fa fa-star"></i></a>-->
+<!--                        <a href="#"><i class="fa fa-star"></i></a>-->
+<!--                        <a href="#"><i class="fa fa-star-half-o flip_H"></i></a>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--                <div class="item">-->
+<!--                    <div class="testi_item" dir="rtl">-->
+<!--                        <p>از این بابت خیلی خوشحالم که میتونم برای هر مشکلی که داشتم بلافاصله از شما کمک بگیرم و شما-->
+<!--                            بلافاصله در هر ساعت از شبانه روز که باشه آنلاین پاسخگو هستید.</p>-->
+<!--                        <h4>مصطفی سلیمی </h4>-->
+<!--                        <a href="#"><i class="fa fa-star"></i></a>-->
+<!--                        <a href="#"><i class="fa fa-star"></i></a>-->
+<!--                        <a href="#"><i class="fa fa-star"></i></a>-->
+<!--                        <a href="#"><i class="fa fa-star"></i></a>-->
+<!--                        <a href="#"><i class="fa fa-star-half-o flip_H"></i></a>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--    </div>-->
+<!--</section>-->
+<!--================End Testimonials Area =================-->
 
 
 
