@@ -1,9 +1,12 @@
 <aside class="single_sidebar_widget search_widget">
-                                    <div class="input-group">
-                                        <input type="text" class="form-control padd-src" placeholder="جستجو پست" >
-                                        <span class="input-group-btn">
-                                            <button class="btn btn-default" type="button"><i class="lnr lnr-magnifier"></i></button>
+    <div class="input-group">
+        <form class="search-form" action="{% url 'blog:search' %}" method="get">
+            <input type="text" name="s" class="form-control padd-src" placeholder="جستجو پست">
+            <span class="input-group-btn">
+                                            <button class="btn btn-default" type="button"><i
+                                                    class="lnr lnr-magnifier"></i></button>
                                         </span>
-                                    </div><!-- /input-group -->
-                                    <div class="br"></div>
-                                </aside>
+        </form>
+    </div><!-- /input-group -->
+    <div class="br"></div>
+</aside>

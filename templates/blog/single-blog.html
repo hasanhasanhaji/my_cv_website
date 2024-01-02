@@ -1,5 +1,6 @@
 {% extends 'base.html' %}
 {% load static %}
+{% load blog_tags %}
 
 {% block content %}
 
@@ -11,11 +12,11 @@
 				<div class="banner_inner d-flex align-items-center">
 					<div class="container">
 						<div class="banner_content text-center">
-							<h2>جزییات وبلاگ</h2>
+							<h2>{{post.title}}</h2>
 							<div class="page_link">
 								<a href="{% url 'cvweb:index' %}">خانه</a>
-								<a href="{% url 'blog:index' %}" style="margin-left:30px ;">وبلاگ</a>
-								<a href="'single-blog.html">جزییات وبلاگ</a>
+								<a href="{% url 'blog:index' %}" style="margin-left:20px ;"> وبلاگ</a>
+								<a>{{post.title}}</a>
 							</div>
 						</div>
 					</div>
@@ -32,21 +33,20 @@
                         <div class="single-post row">
                             <div class="col-lg-12">
                                 <div class="feature-img">
-                                    <img class="img-fluid" src="{% static 'img/blog/feature-img1.jpg' %}" alt="">
+                                    <img class="img-fluid" src="{{post.image.url}}" alt="">
                                 </div>									
                             </div>
                             <div class="col-lg-3  col-md-3">
                                 <div class="blog_info text-right">
                                     <div class="post_tag">
-                                        <a href="#">غدا،</a>
-                                        <a class="active" href="#">تکنولوژی,</a>
-                                        <a href="#">سیاست، </a>
-                                        <a href="#">زندگی</a>
+                                        {% for cat in post.tag.all %}
+                                        <a href="#">{{cat.name}}</a>{% if not  forloop.last %},{% endif %}
+                                        {% endfor %}
                                     </div>
                                     <ul class="blog_meta list" dir="ltr">
-                                        <li><a href="#" >محمد محمدی<i class="lnr lnr-user"></i></a></li>
-                                        <li><a href="#" >  بهمن ۱۳۹۷<i class="lnr lnr-calendar-full"></i></a></li>
-                                        <li><a href="#" >بازدید ۲ میلیون <i class="lnr lnr-eye"></i></a></li>
+                                        <li><a href="#" >{{post.author.get_full_name}}<i class="lnr lnr-user"></i></a></li>
+                                        <li><a href="#" > {{post.published_date|date:"D d M Y"}}<i class="lnr lnr-calendar-full"></i></a></li>
+                                        <li><a href="#" >{{post.counted_views}} <i class="lnr lnr-eye"></i></a></li>
                                         <li><a href="#" >  کامنت ۶ عدد <i class="lnr lnr-bubble"></i></a></li>
                                     </ul>
                                     <ul class="social-links" dir="ltr">
@@ -58,16 +58,11 @@
                                 </div>
                             </div>
                             <div class="col-lg-9 col-md-9 blog_details">
-                                <h2>زیبایی های طبیعت در یک تصویر از زندگی</h2>
+                                <h2>{{post.title}}</h2>
                                 <p class="excert">
-                                    قدردانی از نعمت‌هایی که دارید، برای داشتن زندگی زیبا یک ضرورت است. اگر از کل فهرست فقط و فقط می‌توانید یک مورد را رعایت کنید،‌ همین مورد را انتخاب کنید. شکرگزاری نسبت به داشته‌هایتان کلید زندگی زیباست. وقتی که در شرایط سختِ زندگی شکرگزار نعمت‌ها باشید، زندگی‌تان شادتر می‌شود و احساس آرامش بیشتری خواهید داشت. این امر نه‌تنها زندگی شما، بلکه زندگی اطرافیان‌تان را هم زیباتر می‌کند.
+                                    {{post.content}}
                                 </p>
-                                <p>
-                                    کثر ما نسبت به خود دیدگاهی داریم. ولی کمتر کسی وجود دارد که خود را به‌طور دقیق بشناسد. «خودشناسی» برای داشتن یک زندگی فوق‌العاده بسیار ضروری است. برای شناختن خود باید نگاهی دقیق به خودتان بیندازید. چیزهایی را که سال‌ها انکار کرده‌اید یا ندیده‌اید، ببینید. خودشناسی به شما کمک می‌کند تا علایق، آرزوها، ترس‌ها و چیزهایی که آرامش را از شما سلب کرده‌اند، بهتر بشناسید. این کار شاید در نگاه اول آسان به نظر بیاید، ولی به این آسانی هم نیست
-                                </p>
-                                <p>
-                                    اگر باور دارید یک زندگی زیبا برای شما وجود دارد، وقت آن است که تغییراتی در زندگی‌تان ایجاد کنید. اگر کارهای قبلی را تکرار کنید، نتایج قبلی را به‌دست می‌آورید. کمی زمان می‌برد تا بفهمید چه چیزی در زندگی‌تان کم است یا چه چیزهایی را باید از زندگی‌تان حذف کنید.برای مثال اگر می‌خواهید هدف زندگی‌تان را پیدا کنید، بهتر است به جای وقت گذراندن با افرادی که شما را به عقب می‌رانند،‌ بیشتر با افرادی وقت بگذرانید که الهام‌بخش‌تان هستند 
-                                </p>
+
                             </div>
                             <div class="col-lg-12">
                                 <div class="quotes">
@@ -94,31 +89,37 @@
                         <div class="navigation-area">
                             <div class="row">
                                 <div class="col-lg-6 col-md-6 col-12 nav-left flex-row d-flex justify-content-start align-items-center">
-                                    
+                                    {% if prev_post %}
                                     <div class="arrow">
-                                        <a href="#"><span class="lnr text-white lnr-arrow-right"></span></a>
+                                        <a href="{% url 'blog:single' pid=prev_post.id %}"><span class="lnr text-white lnr-arrow-right"></span></a>
                                     </div>
                                     <div class="detials" style="margin-right:10px ;">
                                         <p>پست قبلی</p>
-                                        <a href="#" style="float: left;"><h4>دنیا علیزاده</h4></a>
+
+
+                                        <a href="{% url 'blog:single' pid=prev_post.id %}" style="float: left;"><h4>{{prev_post.title}}</h4></a>
+
                                     </div>
                                     <div class="thumb">
-                                        <a href="#"><img class="img-fluid" src="{% static 'img/blog/prev.jpg' %}" alt=""></a>
+                                        <a href="{% url 'blog:single' pid=prev_post.id %}"><img class="img-fluid"  style="max-width: 75px; max-height: 75px;" src="{{prev_post.image.url}}" alt=""></a>
                                     </div>
                                 </div>
+                                {% endif %}
+                                {% if next_post %}
                                 <div class="col-lg-6 col-md-6 col-12 nav-right flex-row d-flex justify-content-end align-items-center" dir="ltr">
                                     <div class="detials">
                                         <p>پست بعدی</p>
-                                        <a href="#"><h4>آرمیتا دنیوی</h4></a>
+                                        <a href="{% url 'blog:single' pid=next_post.id %}"><h4>{{ next_post.title }}</h4></a>
                                     </div>
                                     <div class="arrow">
-                                        <a href="#"><span class="lnr text-white lnr-arrow-left"></span></a>
+                                        <a href="{% url 'blog:single' pid=next_post.id %}"><span class="lnr text-white lnr-arrow-left"></span></a>
                                     </div>
                                     <div class="thumb">
-                                        <a href="#"><img class="img-fluid" src="{% static 'img/blog/next.jpg' %}" alt=""></a>
+                                        <a href="{% url 'blog:single' pid=next_post.id %}"><img class="img-fluid" style="max-width: 75px; max-height: 75px;" src="{{next_post.image.url}}" alt=""></a>
                                     </div>										
                                 </div>									
                             </div>
+                            {% endif %}
                         </div>
                         <div class="comments-area" >
                             <h4>  ۵ کامنت</h4>
@@ -241,61 +242,9 @@
                     </div>
                     <div class="col-lg-4">
                         <div class="blog_right_sidebar">
-                            <aside class="single_sidebar_widget search_widget">
-                                <div class="input-group">
-                                    <input type="text" class="form-control padd-src" placeholder="جستجو پست" >
-                                    <span class="input-group-btn">
-                                        <button class="btn btn-default" type="button"><i class="lnr lnr-magnifier"></i></button>
-                                    </span>
-                                </div><!-- /input-group -->
-                                <div class="br"></div>
-                            </aside>
-                            <aside class="single_sidebar_widget author_widget">
-                                <img class="author_img rounded-circle" src="{% static 'img/blog/author.png' %}" alt="">
-                                <h4>محمد محمدی</h4>
-                                <p>وبلاگ نویس</p>
-                                <div class="social_icon">
-                                    <a href="#"><i class="fa fa-facebook"></i></a>
-                                    <a href="#"><i class="fa fa-twitter"></i></a>
-                                    <a href="#"><i class="fa fa-github"></i></a>
-                                    <a href="#"><i class="fa fa-behance"></i></a>
-                                </div>
-                                <p>وبلاگ نویسی به نوعی احترام به بازدید کننده و مخاطب است و شرایطی به وجود می‌آورد که آنها راحت‌تر به اطلاعات مورد نیاز دسترسی داشته باشند.</p>
-                                <div class="br"></div>
-                            </aside>
-                            <aside class="single_sidebar_widget popular_post_widget" س
-                        >
-                                <h3 class="widget_title">پست های محبوب</h3>
-                                <div class="media post_item">
-                                    <img src="{% static 'img/blog/popular-post/post1.jpg' %}" alt="post">
-                                    <div class="media-body">
-                                        <a href="'single-blog.html"><h3>تا کجا میشود رفت</h3></a>
-                                        <p>۲ ساعت پیش</p>
-                                    </div>
-                                </div>
-                                <div class="media post_item">
-                                    <img src="{% static 'img/blog/popular-post/post2.jpg' %}" alt="post">
-                                    <div class="media-body">
-                                        <a href="'single-blog.html"><h3>درآمد های ویژه</h3></a>
-                                        <p>۲ ساعت پیش</p>
-                                    </div>
-                                </div>
-                                <div class="media post_item">
-                                    <img src="{% static 'img/blog/popular-post/post3.jpg' %}" alt="post">
-                                    <div class="media-body">
-                                        <a href="'single-blog.html"><h3>سیاره گردی</h3></a>
-                                        <p>۳ ساعت پیش</p>
-                                    </div>
-                                </div>
-                                <div class="media post_item">
-                                    <img src="{% static 'img/blog/popular-post/post4.jpg' %}" alt="post">
-                                    <div class="media-body">
-                                        <a href="'single-blog.html"><h3>تلسکوپ مجازی</h3></a>
-                                        <p>۱ ساعت پیش</p>
-                                    </div>
-                                </div>
-                                <div class="br"></div>
-                            </aside>
+                            {% include 'blog/blog-search.html' %}
+                            {% include 'blog/blog-writer.html' %}
+                            {% latestposts %}
                             <aside class="single_sidebar_widget ads_widget">
                                 <a href="#"><img class="img-fluid" src="{% static 'img/blog/add.jpg' %}" alt=""></a>
                                 <div class="br"></div>
@@ -344,7 +293,7 @@
                                             <p>ماجراجویی</p>
                                             <p>۴۴</p>
                                         </a>
-                                    </li>															
+                                    </li>
                                 </ul>
                                 <div class="br"></div>
                             </aside>
@@ -362,9 +311,9 @@
                                         <input type="text" class="form-control" id="inlineFormInputGroup" placeholder="ایمیل خود را وارد کنید" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter email'">
                                     </div>
                                     <a href="#" class="bbtns">عضویت</a>
-                                </div>	
-                                <p class="text-bottom">هر وقت بخواهید میتوانید لغو عضویت کنید</p>	
-                                <div class="br"></div>							
+                                </div>
+                                <p class="text-bottom">هر وقت بخواهید میتوانید لغو عضویت کنید</p>
+                                <div class="br"></div>
                             </aside>
                             <aside class="single-sidebar-widget tag_cloud_widget">
                                 <h4 class="widget_title">تگ های ابری</h4>

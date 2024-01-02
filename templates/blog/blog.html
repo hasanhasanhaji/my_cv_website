@@ -1,215 +1,195 @@
 {% extends 'base.html' %}
 {% load static %}
-
+{% load blog_tags %}
 {% block content %}
 
-        
-        <!--================Home Banner Area =================-->
-        <section class="home_banner_area blog_banner">
-            <div class="banner_inner d-flex align-items-center">
-            	<div class="overlay bg-parallax" data-stellar-ratio="0.9" data-stellar-vertical-offset="0" data-background=""></div>
-				<div class="container">
-					<div class="blog_b_text text-center">
-						<h2>وبلاگ شخصی</h2>
-						<p>جدیدترین مطالب در حوزه آموزشی و تکنولوژی</p>
-						<a class="white_bg_btn" href="#">بیشتر ببینید</a>
-					</div>
-				</div>
+
+<!--================Home Banner Area =================-->
+<section class="home_banner_area blog_banner">
+    <div class="banner_inner d-flex align-items-center">
+        <div class="overlay bg-parallax" data-stellar-ratio="0.9" data-stellar-vertical-offset="0"
+             data-background=""></div>
+        <div class="container">
+            <div class="blog_b_text text-center">
+                <h2>وبلاگ شخصی</h2>
+                <p>جدیدترین مطالب در حوزه آموزشی و تکنولوژی</p>
+                <a class="white_bg_btn" href="#">بیشتر ببینید</a>
             </div>
-        </section>
-        <!--================End Home Banner Area =================-->
-        
-        <!--================Blog Categorie Area =================-->
-        <section class="blog_categorie_area">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-4">
-                        <div class="categories_post">
-                            <img src="{% static 'img/blog/cat-post/cat-post-3.jpg' %}" alt="post">
-                            <div class="categories_details">
-                                <div class="categories_text">
-                                    <a href="blog-single.html"><h5>زندگی اجتماعی</h5></a>
-                                    <div class="border_line"></div>
-                                    <p>از زندگی اجتماعی خود باهم لذت ببریم</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4">
-                        <div class="categories_post">
-                            <img src="{% static 'img/blog/cat-post/cat-post-2.jpg' %}" alt="post">
-                            <div class="categories_details">
-                                <div class="categories_text">
-                                    <a href="blog-single.html"><h5>سیاست</h5></a>
-                                    <div class="border_line"></div>
-                                    <p>یک قسمت از سیاست باشید </p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4">
-                        <div class="categories_post">
-                            <img src="{% static 'img/blog/cat-post/cat-post-1.jpg' %}" alt="post">
-                            <div class="categories_details">
-                                <div class="categories_text">
-                                    <a href="blog-single.html"><h5>غذا</h5></a>
-                                    <div class="border_line"></div>
-                                    <p>غذا ها شما را جذب میکنند</p>
-                                </div>
-                            </div>
+        </div>
+    </div>
+</section>
+<!--================End Home Banner Area =================-->
+
+<!--================Blog Categorie Area =================-->
+<section class="blog_categorie_area">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-4">
+                <div class="categories_post">
+                    <img src="{% static 'img/blog/cat-post/cat-post-3.jpg' %}" alt="post">
+                    <div class="categories_details">
+                        <div class="categories_text">
+                            <a href="blog-single.html"><h5>زندگی اجتماعی</h5></a>
+                            <div class="border_line"></div>
+                            <p>از زندگی اجتماعی خود باهم لذت ببریم</p>
                         </div>
                     </div>
                 </div>
             </div>
-        </section>
-        <!--================Blog Categorie Area =================-->
-        
-        <!--================Blog Area =================-->
-        <section class="blog_area">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-8">
-                        <div class="blog_left_sidebar">
+            <div class="col-lg-4">
+                <div class="categories_post">
+                    <img src="{% static 'img/blog/cat-post/cat-post-2.jpg' %}" alt="post">
+                    <div class="categories_details">
+                        <div class="categories_text">
+                            <a href="blog-single.html"><h5>سیاست</h5></a>
+                            <div class="border_line"></div>
+                            <p>یک قسمت از سیاست باشید </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="categories_post">
+                    <img src="{% static 'img/blog/cat-post/cat-post-1.jpg' %}" alt="post">
+                    <div class="categories_details">
+                        <div class="categories_text">
+                            <a href="blog-single.html"><h5>غذا</h5></a>
+                            <div class="border_line"></div>
+                            <p>غذا ها شما را جذب میکنند</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!--================Blog Categorie Area =================-->
 
-                            {% for post in posts %}
+<!--================Blog Area =================-->
+<section class="blog_area">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8">
+                <div class="blog_left_sidebar">
 
-                            <article class="row blog_item">
-                               <div class="col-md-3">
-                                   <div class="blog_info text-right">
-                                        <div class="post_tag">
-                                            {% for cat in post.tag.all %}
-                                            <a href="{% url 'blog:category' cat_name=cat.name %}"> {{cat.name}} </a> {% if not forloop.last %}, {% endif %}
-                                            {% endfor %}
-                                        </div>
-                                        <ul class="blog_meta list" dir="ltr">
-                                                <li><a href="{% url 'blog:author' author_username=post.author.username %}" >{{post.author.get_full_name}}<i class="lnr lnr-user"></i></a></li>
-                                                <li><a href="#" > {{post.published_date|date:"D d M Y"}}<i class="lnr lnr-calendar-full"></i></a></li>
-                                                <li><a href="#" >{{post.counted_views}} <i class="lnr lnr-eye"></i></a></li>
-                                                <li><a href="#" >  کامنت ۶ عدد <i class="lnr lnr-bubble"></i></a></li>
-                                         </ul>
-                                    </div>
-                               </div>
-                                <div class="col-md-9">
-                                    <div class="blog_post">
-                                        <img src="{{post.image.url}}" alt="">
-                                        <div class="blog_details">
-                                            <a href="{% url 'blog:single' pid=post.id %}"><h2>{{post.title}}</h2></a>
-                                            <p>{{post.content|truncatewords:75}}</p>
-                                            <a href="{%url 'blog:single' pid=post.id %}" class="white_bg_btn">View More</a>
-                                        </div>
-                                    </div>
+                    {% for post in posts %}
+
+                    <article class="row blog_item">
+                        <div class="col-md-3">
+                            <div class="blog_info text-right">
+                                <div class="post_tag">
+                                    {% for cat in post.tag.all %}
+                                    <a href="{% url 'blog:category' cat_name=cat.name %}"> {{cat.name}} </a>
+                                    {% if not forloop.last %}, {% endif %}
+                                    {% endfor %}
                                 </div>
-                            </article>
-                            {% endfor %}
+                                <ul class="blog_meta list" dir="ltr">
+                                    <li><a href="{% url 'blog:author' author_username=post.author.username %}">{{post.author.get_full_name}}<i
+                                            class="lnr lnr-user"></i></a></li>
+                                    <li><a href="#"> {{post.published_date|date:"D d M Y"}}<i
+                                            class="lnr lnr-calendar-full"></i></a></li>
+                                    <li><a href="#">{{post.counted_views}} <i class="lnr lnr-eye"></i></a></li>
+                                    <li><a href="#"> کامنت ۶ عدد <i class="lnr lnr-bubble"></i></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-md-9">
+                            <div class="blog_post">
+                                <img src="{{post.image.url}}" alt="">
+                                <div class="blog_details">
+                                    <a href="{% url 'blog:single' pid=post.id %}"><h2>{{post.title}}</h2></a>
+                                    <p>{{post.content|truncatewords:75}}</p>
+                                    <a href="{%url 'blog:single' pid=post.id %}" class="white_bg_btn">View More</a>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+                    {% endfor %}
 
-                            <nav class="blog-pagination justify-content-center d-flex">
-		                        <ul class="pagination">
-		                            <li class="page-item">
-		                                <a href="#" class="page-link" aria-label="Previous">
+                    <nav class="blog-pagination justify-content-center d-flex">
+                        <ul class="pagination">
+                            {% if posts.has_previous %}
+                            <li class="page-item">
+                                <a href="?page={{ posts.previous_page_number }}" class="page-link"
+                                   aria-label="Previous">
 		                                    <span aria-hidden="true">
 		                                        <span class="lnr lnr-chevron-right"></span>
 		                                    </span>
-		                                </a>
-		                            </li>
-		                            <li class="page-item"><a href="#" class="page-link">۰۱</a></li>
-		                            <li class="page-item active"><a href="#" class="page-link">۰۲</a></li>
-		                            <li class="page-item"><a href="#" class="page-link">۰۳</a></li>
-		                            <li class="page-item"><a href="#" class="page-link">۰۴</a></li>
-		                            <li class="page-item"><a href="#" class="page-link">۰۹</a></li>
-		                            <li class="page-item">
-		                                <a href="#" class="page-link" aria-label="Next">
+                                </a>
+                            </li>
+                            {% endif %}
+
+                            {% for i in posts.paginator.page_range %}
+                            <li class="page-item"><a href="?page={{i}}" class="page-link">{{i}}</a></li>
+                            {% endfor %}
+
+                            {% if posts.has_next %}
+                            <li class="page-item">
+                                <a href="?page={{ posts.next_page_number }}" class="page-link" aria-label="Next">
 		                                    <span aria-hidden="true">
 		                                        <span class="lnr lnr-chevron-left"></span>
 		                                    </span>
-		                                </a>
-		                            </li>
-		                        </ul>
-		                    </nav>
-                        </div>
-                    </div>
-                    <div class="col-lg-4">
-                            <div class="blog_right_sidebar">
-                                {% include 'blog/blog-search.html' %}
-                                {%  include 'blog/blog-writer.html' %}
-
-                                <aside class="single_sidebar_widget popular_post_widget" س
-                            >
-                                    <h3 class="widget_title">پست های محبوب</h3>
-                                    <div class="media post_item">
-                                        <img src="{% static 'img/blog/popular-post/post1.jpg' %}" alt="post">
-                                        <div class="media-body">
-                                            <a href="blog-single.html"><h3>تا کجا میشود رفت</h3></a>
-                                            <p>۲ ساعت پیش</p>
-                                        </div>
-                                    </div>
-                                    <div class="media post_item">
-                                        <img src="{% static 'img/blog/popular-post/post2.jpg' %}" alt="post">
-                                        <div class="media-body">
-                                            <a href="blog-single.html"><h3>درآمد های ویژه</h3></a>
-                                            <p>۲ ساعت پیش</p>
-                                        </div>
-                                    </div>
-                                    <div class="media post_item">
-                                        <img src="{% static 'img/blog/popular-post/post3.jpg' %}" alt="post">
-                                        <div class="media-body">
-                                            <a href="blog-single.html"><h3>سیاره گردی</h3></a>
-                                            <p>۳ ساع پیش</p>
-                                        </div>
-                                    </div>
-                                    <div class="media post_item">
-                                        <img src="{% static 'img/blog/popular-post/post4.jpg' %}" alt="post">
-                                        <div class="media-body">
-                                            <a href="blog-single.html"><h3>تلسکوپ مجازی</h3></a>
-                                            <p>۱ ساعت پیش</p>
-                                        </div>
-                                    </div>
-                                    <div class="br"></div>
-                                </aside>
-                                <aside class="single_sidebar_widget ads_widget">
-                                    <a href="#"><img class="img-fluid" src="{% static 'img/blog/add.jpg' %}" alt=""></a>
-                                    <div class="br"></div>
-                                </aside>
-                                ppp
-                                <aside class="single-sidebar-widget newsletter_widget">
-                                    <h4 class="widget_title">خبرنامه</h4>
-                                    <p>
-                                    ما در اینجا به زندگی شما اهمیت میدهیم و زندگی شما برا طرح های ما مهم است
-                                    به ما یک مدت فرضت دهید.
-                                    </p>
-                                    <div class="form-group d-flex flex-row">
-                                        <div class="input-group">
-                                            <div class="input-group-prepend">
-                                                <div class="input-group-text"><i class="fa fa-envelope" aria-hidden="true"></i></div>
-                                            </div>
-                                            <input type="text" class="form-control" id="inlineFormInputGroup" placeholder="ایمیل خود را وارد کنید" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter email'">
-                                        </div>
-                                        <a href="#" class="bbtns">عضویت</a>
-                                    </div>	
-                                    <p class="text-bottom">هر وقت بخواهید میتوانید لغو عضویت کنید</p>	
-                                    <div class="br"></div>							
-                                </aside>
-                                <aside class="single-sidebar-widget tag_cloud_widget">
-                                    <h4 class="widget_title">تگ های ابری</h4>
-                                    <ul class="list">
-                                        <li><a href="#">تکنولوژی</a></li>
-                                        <li><a href="#">مد</a></li>
-                                        <li><a href="#">معماری</a></li>
-                                        <li><a href="#">مد</a></li>
-                                        <li><a href="#">غذا</a></li>
-                                        <li><a href="#">تکنولوژی</a></li>
-                                        <li><a href="#">زندگی</a></li>
-                                        <li><a href="#">هنر</a></li>
-                                        <li><a href="#">ماجراجویی</a></li>
-                                        <li><a href="#">غذا</a></li>
-                                        <li><a href="#">زندگی</a></li>
-                                        <li><a href="#">ماجراجویی</a></li>
-                                    </ul>
-                                </aside>
-                            </div>
-                        </div>
+                                </a>
+                            </li>
+                            {% endif %}
+                        </ul>
+                    </nav>
                 </div>
             </div>
-        </section>
-        <!--================Blog Area =================-->
-        
+            <div class="col-lg-4">
+                <div class="blog_right_sidebar">
+                    {% include 'blog/blog-search.html' %}
+                    {% include 'blog/blog-writer.html' %}
+                    {% latestposts %}
+
+                    <aside class="single_sidebar_widget ads_widget">
+                        <a href="#"><img class="img-fluid" src="{% static 'img/blog/add.jpg' %}" alt=""></a>
+                        <div class="br"></div>
+                    </aside>
+                    {% postcategories %}
+                    <aside class="single-sidebar-widget newsletter_widget">
+                        <h4 class="widget_title">خبرنامه</h4>
+                        <p>
+                            ما در اینجا به زندگی شما اهمیت میدهیم و زندگی شما برا طرح های ما مهم است
+                            به ما یک مدت فرضت دهید.
+                        </p>
+                        <div class="form-group d-flex flex-row">
+                            <div class="input-group">
+                                <div class="input-group-prepend">
+                                    <div class="input-group-text"><i class="fa fa-envelope" aria-hidden="true"></i>
+                                    </div>
+                                </div>
+                                <input type="text" class="form-control" id="inlineFormInputGroup"
+                                       placeholder="ایمیل خود را وارد کنید" onfocus="this.placeholder = ''"
+                                       onblur="this.placeholder = 'Enter email'">
+                            </div>
+                            <a href="#" class="bbtns">عضویت</a>
+                        </div>
+                        <p class="text-bottom">هر وقت بخواهید میتوانید لغو عضویت کنید</p>
+                        <div class="br"></div>
+                    </aside>
+                    <aside class="single-sidebar-widget tag_cloud_widget">
+                        <h4 class="widget_title">تگ های ابری</h4>
+                        <ul class="list">
+                            <li><a href="#">تکنولوژی</a></li>
+                            <li><a href="#">مد</a></li>
+                            <li><a href="#">معماری</a></li>
+                            <li><a href="#">مد</a></li>
+                            <li><a href="#">غذا</a></li>
+                            <li><a href="#">تکنولوژی</a></li>
+                            <li><a href="#">زندگی</a></li>
+                            <li><a href="#">هنر</a></li>
+                            <li><a href="#">ماجراجویی</a></li>
+                            <li><a href="#">غذا</a></li>
+                            <li><a href="#">زندگی</a></li>
+                            <li><a href="#">ماجراجویی</a></li>
+                        </ul>
+                    </aside>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!--================Blog Area =================-->
+
 {% endblock %}
