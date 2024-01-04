@@ -78,7 +78,7 @@
                         <div class="col-md-3">
                             <div class="blog_info text-right">
                                 <div class="post_tag">
-                                    {% for cat in post.tag.all %}
+                                    {% for cat in post.category.all %}
                                     <a href="{% url 'blog:category' cat_name=cat.name %}"> {{cat.name}} </a>
                                     {% if not forloop.last %}, {% endif %}
                                     {% endfor %}

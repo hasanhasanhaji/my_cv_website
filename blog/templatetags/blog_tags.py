@@ -12,7 +12,7 @@ def postcategories():  # this function will be used in blog.html to load blog-po
 
     cat_dict = {}
     for name in categories:
-        cat_dict[name] = posts.filter(tag=name).count()
+        cat_dict[name] = posts.filter(category=name).count()
     return {'categories': cat_dict}
 
 
