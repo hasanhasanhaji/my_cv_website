@@ -6,13 +6,16 @@ from django.core.paginator import Paginator, PageNotAnInteger, EmptyPage
 # Create your views here.
 
 
-def blog_view(request, cat_name=None, author_username=None):
+def blog_view(request, cat_name=None, author_username=None, tag_name = None):
     posts = Post.objects.filter(status=1, published_date__lte=timezone.now()).order_by('-published_date')
     if cat_name:
         posts = posts.filter(category__name=cat_name)   # we use __ because cat is a foreign key
 
     if author_username:
         posts = posts.filter(author__username=author_username)
+
+    if tag_name:
+        posts = posts.filter(tag__name=tag_name)
 
     posts = Paginator(posts, 4)
     try:
