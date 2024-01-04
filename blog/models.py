@@ -1,5 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import User
+from django.urls import reverse
 # Create your models here.
 
 
@@ -27,3 +28,7 @@ class Post(models.Model):
 
     def __str__(self):  # a function that shows return value in admin page instead of object
         return self.title
+
+    def get_absolute_url(self):
+        return reverse('blog:single', kwargs={'pid': self.id})
+        
