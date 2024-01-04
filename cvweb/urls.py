@@ -1,4 +1,4 @@
-from cvweb.views import index_view, about_view, contact_view,element_view, portfolio_view, service_view
+from cvweb.views import *
 from django.urls import path
 from django.conf.urls.static import static
 from django.conf import settings
@@ -12,6 +12,7 @@ urlpatterns = [
     path('element/', element_view, name='element'),
     path('portfolio/', portfolio_view, name='portfolio'),
     path('service/', service_view, name='service'),
+    path('newsletter/', newsletter_view, name='newsletter')
 
 ]
 

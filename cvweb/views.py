@@ -1,5 +1,6 @@
 from django.shortcuts import render
-
+from cvweb.forms import NewsletterForm, ContactForm
+from django.http import HttpResponseRedirect
 # Create your views here.
 
 
@@ -32,3 +33,14 @@ def portfolio_view(request):
 
 def service_view(request):
     return render(request, 'website/services.html')
+
+
+def newsletter_view(request):
+    if request.method == 'POST':
+        form = NewsletterForm(request.POST)
+
+        if form.is_valid():
+            form.save()
+            return HttpResponseRedirect('/')
+        else:
+            return HttpResponseRedirect('/')
