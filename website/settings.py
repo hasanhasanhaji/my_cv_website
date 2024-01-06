@@ -39,12 +39,15 @@ INSTALLED_APPS = [
     'django.contrib.sites',
     'django.contrib.sitemaps',
     'taggit',
+    'django_summernote',
     "debug_toolbar",
     'robots',
 
     'cvweb',
     'blog'
 ]
+# summernote settings
+SUMMERNOTE_THEME = 'bs4'  # Show summernote with Bootstrap4
 
 # sitemap
 SITE_ID = 1
@@ -147,3 +150,5 @@ INTERNAL_IPS = [
     "127.0.0.1",
     # ...
 ]
+
+X_FRAME_OPTIONS = 'SAMEORIGIN'
