@@ -2,6 +2,7 @@ from django.urls import path
 from blog.views import *
 from django.conf.urls.static import static
 from django.conf import settings
+from blog.feeds import LatestEntriesFeed
 
 app_name = 'blog'
 urlpatterns = [
@@ -12,7 +13,7 @@ urlpatterns = [
     path('tag/<str:tag_name>', blog_view, name='tag'),
     path('author/<str:author_username>', blog_view, name='author'),
     path('search/', blog_search, name='search'),
-
+    path('rss/feed/', LatestEntriesFeed()),
 ]
 
 urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
