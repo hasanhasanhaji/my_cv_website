@@ -4009,3 +4009,24 @@ h6 {
     transform: scale(-1, 1);
 }
 
+ul.messages {
+  list-style:none;
+  padding: 0;
+  margin: 0;
+}
+
+li.message {
+  padding: 10px;
+  margin: 10px 0;
+  border-radius: 5px;
+}
+
+li.success {
+  background-color: transparent; /* Green background for success messages */
+  color: #0cd210; /* White text color for success messages */
+}
+
+li.error {
+  background-color: transparent; /* Red background for error messages */
+  color: #e81111; /* White text color for error messages */
+}

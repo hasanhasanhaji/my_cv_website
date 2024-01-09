@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from cvweb.forms import NewsletterForm, ContactForm
 from django.http import HttpResponseRedirect
 from django.contrib import messages
@@ -25,9 +25,11 @@ def contact_view(request):
         form = ContactForm(request.POST)
         if form.is_valid():
             form.save()
-            messages.add_message(request, messages.SUCCESS, "Your ticket submitted very well")
+            messages.add_message(request, messages.SUCCESS, "پیام شما با موفقیت ارسال شد.")
+            return redirect('/contact')
         else:
-            messages.add_message(request, messages.ERROR, "Your ticket didnt submitted successfully")
+            messages.add_message(request, messages.ERROR, "متاسفانه پیام شما ارسال نشد.")
+            return redirect('/contact')
     form = ContactForm()
     return render(request, 'website/contact.html', {'form': form})
 
@@ -50,9 +52,10 @@ def newsletter_view(request):
 
         if form.is_valid():
             form.save()
-            messages.add_message(request, messages.SUCCESS, "Your ticket submitted very well")
+            print("hi")
+            messages.add_message(request, messages.SUCCESS, "ایمیل شما با موفقیت ثبت شد.")
             return HttpResponseRedirect('/')
 
         else:
-            messages.add_message(request, messages.ERROR, "Your ticket didnt submitted successfully")
+            messages.add_message(request, messages.ERROR, "خطا در ثبت ایمیل!")
             return HttpResponseRedirect('/')

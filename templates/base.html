@@ -111,6 +111,15 @@
                                        placeholder="ایمیل خود را وارد نمایید" onfocus="this.placeholder = ''"
                                        onblur="this.placeholder = 'آدرس ایمیل '" required="" type="email">
 
+                                {% if messages %}
+                                <ul class="messages">
+                                    {% for message in messages %}
+                                    <li
+                                            {% if message.tags %} class="{{ message.tags }}" {% endif %}>{{ message }}
+                                    </li>
+                                    {% endfor %}
+                                </ul>
+                                {% endif %}
 
                                 <button class="btn sub-btn" dir="ltr" type="submit"><span
                                         class="lnr lnr-arrow-left"></span></button>
@@ -130,12 +139,12 @@
                         <h3>سوالی دارید؟</h3>
                     </div>
                     <p>hasanhasanhaji@gmail.com</p>
-                    <!--        					<ul class="list" dir="ltr" >-->
-                    <!--        						<li><a href="#"><i class="fa fa-facebook"></i></a></li>-->
-                    <!--        						<li><a href="#"><i class="fa fa-twitter"></i></a></li>-->
-                    <!--        						<li><a href="#"><i class="fa fa-dribbble"></i></a></li>-->
-                    <!--        						<li style="margin-right: 10px!important;"><a href="#"><i class="fa fa-behance"></i></a></li>-->
-                    <!--        					</ul>-->
+                    <ul class="list" dir="ltr">
+                        <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                        <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                        <li><a href="#"><i class="fa fa-dribbble"></i></a></li>
+                        <li style="margin-right: 10px!important;"><a href="#"><i class="fa fa-behance"></i></a></li>
+                    </ul>
                 </aside>
             </div>
         </div>

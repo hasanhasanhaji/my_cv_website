@@ -5,7 +5,7 @@ from captcha.fields import CaptchaField
 
 
 class ContactForm(ModelForm):
-    captcha = CaptchaField()  # it's for captcha
+    # captcha = CaptchaField()  # it's for captcha
     class Meta:
         model = Contact
         fields = '__all__'  # چه فیلدهایی داشته باشه فرم من

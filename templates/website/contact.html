@@ -54,7 +54,10 @@
                 </div>
             </div>
             <div class="col-lg-9">
+
+
                 <form class="row contact_form" action="{% url 'cvweb:contact' %}" method="post" novalidate="novalidate">
+                    {% csrf_token %}
                     <div class="col-md-6">
                         <div class="form-group">
                             <input type="name" class="form-control" name="name" placeholder="نام خود را وارد کنید">
@@ -74,7 +77,6 @@
                                       placeholder="نظر خود را وارد کنید"></textarea>
                         </div>
                     </div>
-                    {% csrf_token %}
                     {% if messages %}
                     <ul class="messages">
                         {% for message in messages %}
@@ -85,7 +87,6 @@
                     </ul>
                     {% endif %}
 
-                    {{form.captcha}}
                     <div class="col-md-12 text-right">
                         <button type="submit" value="submit" class="btn submit_btn" style="float: left;">ارسال دیدگاه
                         </button>
