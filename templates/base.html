@@ -105,22 +105,13 @@
                     <p>با آخرین فعالیت های ما بروز باشید</p>
                     <div>
                         <form action="{% url 'cvweb:newsletter' %}" method="post" class="subscribe_form relative">
-
+                            {% csrf_token %}
                             <div class="input-group d-flex flex-row">
                                 <input style="text-align: right!important;" name="email"
                                        placeholder="ایمیل خود را وارد نمایید" onfocus="this.placeholder = ''"
                                        onblur="this.placeholder = 'آدرس ایمیل '" required="" type="email">
-                                {% csrf_token %}
 
-                                {% if messages %}
-                                <ul class="messages">
-                                    {% for message in messages %}
-                                    <li
-                                            {% if message.tags %} class="{{ message.tags }}" {% endif %}>{{ message }}
-                                    </li>
-                                    {% endfor %}
-                                </ul>
-                                {% endif %}
+
                                 <button class="btn sub-btn" dir="ltr" type="submit"><span
                                         class="lnr lnr-arrow-left"></span></button>
 

@@ -50,8 +50,9 @@ def newsletter_view(request):
 
         if form.is_valid():
             form.save()
-            return HttpResponseRedirect('/')
             messages.add_message(request, messages.SUCCESS, "Your ticket submitted very well")
+            return HttpResponseRedirect('/')
+
         else:
             messages.add_message(request, messages.ERROR, "Your ticket didnt submitted successfully")
             return HttpResponseRedirect('/')
